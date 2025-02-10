@@ -31,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm install --force
 
-      - name: Run Prettier check
-        run: npx prettier --check . # Or 'yarn prettier --check .' if using yarn
+      - name: Format code with Prettier
+        run: npx prettier --write . # This will auto-fix formatting issues
 
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
         run: |
